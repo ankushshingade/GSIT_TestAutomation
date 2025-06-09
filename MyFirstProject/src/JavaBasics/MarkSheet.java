@@ -9,6 +9,12 @@ public class MarkSheet {
 		int sci = 88;
 		int engl = 82;
 		
+		byte a=10, b=20, c=5;
+		
+		int d=a+b+c;
+		System.out.println(d);
+		System.out.println("Byte"+ (byte)d);
+		
 		int totalMarks = math + sci + engl;
 		
 		System.out.println("Total marks = "+totalMarks);
