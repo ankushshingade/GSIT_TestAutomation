@@ -5,7 +5,7 @@ public class Palindrome {
 	public static void main(String[] args) {
 		// TODO Auto-generated method stub
 		
-		int num1 = 1281;
+		int num1 = 121;
 		
 		int num2 = num1;
 		
