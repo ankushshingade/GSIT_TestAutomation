@@ -5,7 +5,7 @@ public class ReportCard {
 	public static void main(String[] args) {
 		// TODO Auto-generated method stub
 		
-		int maths=90, sci=95, engl=2;
+		int maths=60, sci=55, engl=12;
 		
 		int average = (maths+sci+engl)/3;
 		
