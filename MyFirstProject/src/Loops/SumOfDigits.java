@@ -5,7 +5,7 @@ public class SumOfDigits {
 	public static void main(String[] args) {
 		// TODO Auto-generated method stub
 		
-		int a = 1234;
+		int a = 12345;
 		int sum = 0;
 		
 		while(a!=0) {
