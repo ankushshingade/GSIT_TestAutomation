@@ -1,10 +1,10 @@
-package JavaCodingInterviewQuestions;
+package StringManipulation;
 
-public class StringReverse {
+public class ReverseString {
 
 	public static void main(String[] args) {
-		// TODO Auto-generated method stub
-		
+		// TODO Auto-generated method stub		
+
 		String test1 = "Test";
 		
 		String rev = "";
