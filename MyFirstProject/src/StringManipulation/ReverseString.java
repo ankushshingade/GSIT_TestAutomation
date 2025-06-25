@@ -18,6 +18,13 @@ public class ReverseString {
 			rev += test1.charAt(i);
 		}
 		System.out.println(rev);
+		
+		String test2 = "GeeksForGeeks";
+		
+		for(int i = test2.length()-1; i>=0; i--) {
+			System.out.print(test2.charAt(i));
+		}
+			
 
 	}
 

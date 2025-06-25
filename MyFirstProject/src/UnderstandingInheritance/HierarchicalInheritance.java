@@ -16,11 +16,11 @@ class Circle extends Shapes
 	}
 }
 
-class Rectangle extends Shapes
+class Square extends Shapes
 {
 	void area()
 	{
-		System.out.println("Area of Rectangle.");
+		System.out.println("Area of Square.");
 	}
 }
 
@@ -39,7 +39,7 @@ public class HierarchicalInheritance {
 		Elipse El = new Elipse();
 		El.area();
 		
-		Rectangle Re = new Rectangle();
+		Square Re = new Square();
 		Re.area();
 		
 		Circle Ci = new Circle();
