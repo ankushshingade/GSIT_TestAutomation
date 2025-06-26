@@ -49,6 +49,11 @@ public class OneMoreExample {
 		
 		RectangleWithWeight RW1 = new RectangleWithWeight(2,3,4);
 		System.out.println(RW1.l+ " " +RW1.b+ " " +RW1.w);
+		
+		Rectangle R2 = new RectangleWithWeight(5,6,7);
+		System.out.println(R2.l+ " " +R2.b+ " ");
+		
+		System.out.println(((RectangleWithWeight)R2).w);	// type casting
 
 	}
 
