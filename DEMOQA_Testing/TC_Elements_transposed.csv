@@ -1,0 +1,184 @@
+﻿Test Case ID;Test Case Title;Priority;Preconditions;Test Steps;Test Data;Expected Result;Status;Actual Result;Bug ID
+TC-ELEM-001;Verify successful submission with valid data.;High;"The user is on the ""Text Box"" page and all fields are empty.";"1. Enter a valid name in the ""Full Name"" field.
+2. Enter a valid email in the ""Email"" field.
+3. Enter an address in the ""Current Address"" field.
+4. Enter an address in the ""Permanent Address"" field.
+5. Click the ""Submit"" button.";"Full Name: John Doe
+Email: john.doe@example.com
+Current Address: 123 Main St, Anytown, USA
+Permanent Address: 456 Oak Ave, Anytown, USA";"A summary box appears below the form.
+The summary box contains four lines, correctly displaying the Name, Email, Current Address, and Permanent Address exactly as entered.
+";Not Run;(To be filled during execution);(To be filled if Fail)
+TC-ELEM-002;Verify form behavior with an invalid email format.;High;"The user is on the ""Text Box"" page and all fields are empty.";"1. Enter a valid name in the ""Full Name"" field.
+2. Enter an invalid email in the ""Email"" field.
+3. Enter an address in the ""Current Address"" field.
+4. Click the ""Submit"" button.";"Full Name: Jane Smith
+Email: jane.smith-invalid-email
+Current Address: 987 Pine Ln";"The form does not submit.
+The ""Email"" input field's border turns red to indicate an error.
+No summary box is displayed below the form.";Not Run;(To be filled during execution);(To be filled if Fail)
+TC-ELEM-003;Verify the expand and collapse functionality of the tree.;High;User is on the Checkbox page. The tree is fully collapsed.;"1. Click the + icon to the right of the ""Home"" checkbox.
+2. Click the + icon next to ""Documents"".
+3. Click the - icon next to ""Documents"".
+4. Click the - icon to the right of the ""Home"" checkbox.";N/A;"1. The ""Desktop"", ""Documents"", and ""Downloads"" directories become visible.
+2. The ""WorkSpace"" and ""Office"" directories become visible.
+3. The ""WorkSpace"" and ""Office"" directories are hidden.
+4. The entire tree collapses, showing only the ""Home"" checkbox. The result text area remains empty throughout.";Not Run;(To be filled during execution);(To be filled if Fail)
+TC-ELEM-004;"Verify selecting a parent checkbox (""Home"") selects all its children.";High;User is on the Checkbox page. The tree is fully collapsed.;"1. Click the + icon to expand the ""Home"" directory.
+2. Click the checkbox next to ""Home"".";N/A;"All checkboxes in the entire tree become checked.
+The result text area displays:
+You have selected : home, desktop, notes, commands, documents, workspace, react, angular, veu, office, public, private, classified, general, downloads, wordFile, excelFile";Not Run;(To be filled during execution);(To be filled if Fail)
+TC-ELEM-005;"Verify deselecting a parent checkbox (""Home"") deselects all its children.";High;All checkboxes in the tree are selected. The result text is displayed.;"1. Click the checkbox next to ""Home"" to deselect it.";N/A;"All checkboxes in the tree become unchecked. The result text area becomes empty (the ""You have selected :"" text disappears).";Not Run;(To be filled during execution);(To be filled if Fail)
+TC-ELEM-006;Verify selecting an individual child checkbox.;High;User is on the Checkbox page. The tree is fully collapsed.;"1. Click the + icon to expand ""Home"".
+2. Click the + icon to expand ""Downloads"".
+3. Click the checkbox next to ""Word File.doc"".";N/A;"The result text area displays:
+You have selected : wordFile";Not Run;(To be filled during execution);(To be filled if Fail)
+TC-ELEM-007;Verify a parent is automatically selected when all its children are checked manually.;Medium;User is on the Checkbox page. The tree is fully collapsed.;"1. Expand the tree to show the contents of ""WorkSpace"" (Home -> Documents -> WorkSpace).
+2. Click the checkbox for ""React"".
+3. Click the checkbox for ""Angular"".
+4. Click the checkbox for ""Veu"".";N/A;"After step 4, the checkboxes for ""React"", ""Angular"", ""Veu"", AND ""WorkSpace"" are checked.
+
+The result text area displays:
+You have selected :
+react
+angular
+veu
+workspace";Not Run;(To be filled during execution);(To be filled if Fail)
+TC-ELEM-008;Verify a parent is automatically deselected when one of its children is unchecked.;Medium;"The ""Documents"", ""WorkSpace"", ""React"", ""Angular"", and ""Veu"" checkboxes are all selected.";"1. Expand the tree to show the contents of ""WorkSpace"".
+2. Uncheck the ""React"" checkbox.";N/A;"The ""WorkSpace"" checkbox becomes unchecked automatically.
+""React"" is unchecked, but ""Angular"" and ""Veu"" remain checked.
+The result text area updates to display:
+You have selected :
+angular
+veu";Not Run;(To be filled during execution);(To be filled if Fail)
+TC-ELEM-009;"Verify selecting the ""Yes"" radio button.";High;User is on the Radio Button page. No radio button is selected.;"1. Observe the initial state of the page.
+2. Click on the ""Yes"" radio button.";N/A;"1. Initially, no radio button is selected and there is no result text.
+2. The ""Yes"" radio button becomes selected.
+3. The text ""You have selected Yes"" appears below the buttons.";Not Run;(To be filled during execution);(To be filled if Fail)
+TC-ELEM-010;"Verify selecting the ""Impressive"" radio button.";High;User is on the Radio Button page. No radio button is selected.;"1. Observe the initial state of the page.
+2. Click on the ""Impressive"" radio button.";N/A;"1. Initially, no radio button is selected and there is no result text.
+2. The ""Impressive"" radio button becomes selected.
+3. The text ""You have selected Impressive"" appears below the buttons.";Not Run;(To be filled during execution);(To be filled if Fail)
+TC-ELEM-011;Verify that only one radio button can be selected at a time (mutual exclusivity).;High;User is on the Radio Button page. No radio button is selected.;"1. Click the ""Yes"" radio button.
+2. Verify the result.
+3. Now, click the ""Impressive"" radio button.";N/A;"1. ""Yes"" is selected. The result text is ""You have selected Yes"".
+2. The ""Yes"" button becomes unselected. The ""Impressive"" button becomes selected.
+3. The result text updates to ""You have selected Impressive"".";Not Run;(To be filled during execution);(To be filled if Fail)
+TC-ELEM-012;"Verify the ""No"" radio button is disabled and cannot be selected.";High;User is on the Radio Button page.;"1. Observe the ""No"" radio button.
+2. Hover the mouse cursor over the ""No"" radio button.
+3. Attempt to click the ""No"" radio button.";N/A;"1. The ""No"" button is visually grayed out, indicating it is disabled.
+2. The cursor changes to a ""not-allowed"" symbol (e.g., a circle with a slash through it).
+3. Clicking the button has no effect. The button does not become selected, and no result text appears. The state of the other radio buttons does not change.";Not Run;(To be filled during execution);(To be filled if Fail)
+TC-ELEM-013;Verify adding a new record with valid data.;High;User is on the Web Tables page.;"1. Click the Add button.
+2. Fill out all fields in the ""Registration Form"" modal.
+3. Click the Submit button.";"First Name: Test
+Last Name: User
+Email: test.user@example.com
+Age: 30
+Salary: 50000
+Department: QA";"The ""Registration Form"" modal closes.
+A new row is added to the table containing the exact data entered.
+The table now has 4 rows (if starting from the default 3).";Not Run;(To be filled during execution);(To be filled if Fail)
+TC-ELEM-014;Verify editing an existing record.;High;"User is on the Web Tables page. The first record for ""Cierra"" exists.";"1. In the row for ""Cierra"", click the Edit icon (pencil).
+2. In the ""Registration Form"" modal, change the value in the ""Age"" field.
+3. Change the value in the ""Salary"" field.
+4. Click the Submit button.";"Age: 45
+Salary: 15000";"The ""Registration Form"" modal closes.
+The row for ""Cierra"" is updated in the table.
+The ""Age"" for Cierra's record now displays ""45"".
+The ""Salary"" for Cierra's record now displays ""15000"".
+Other fields in the row remain unchanged.";Not Run;(To be filled during execution);(To be filled if Fail)
+TC-ELEM-015;Verify deleting an existing record.;High;"User is on the Web Tables page. The second record for ""Alden"" exists.";"1. In the row for ""Alden"", click the Delete icon (trash can).";N/A;"
+The row containing the data for ""Alden"" is immediately removed from the web table.
+The table now has 2 rows (if starting from the default 3).";Not Run;(To be filled during execution);(To be filled if Fail)
+TC-ELEM-016;Verify form validation for invalid data.;High;User is on the Web Tables page.;"1. Click the Add button.
+2. Enter an invalid email format in the ""Email"" field.
+3. Enter a non-numeric value in the ""Age"" field.
+4. Click the Submit button.";"Email: invalid-email
+Age: thirty";"The ""Registration Form"" modal remains open.
+The ""Email"" and ""Age"" input fields are highlighted with a red border, indicating a validation error.
+No new record is added to the table.";Not Run;(To be filled during execution);(To be filled if Fail)
+TC-ELEM-017;Verify search functionality with an existing value.;High;User is on the Web Tables page with the default records loaded.;1. Type a search term into the Search box that exists in the table (e.g., a first name).;Search Term: Kierra;"The table automatically filters to show only the row(s) containing the search term ""Kierra"".
+In this case, only one row is displayed.";Not Run;(To be filled during execution);(To be filled if Fail)
+TC-ELEM-018;Verify search functionality with a non-existent value.;Medium;User is on the Web Tables page with the default records loaded.;1. Type a search term into the Search box that does not exist in the table.;Search Term: NonExistentName;"The table body becomes empty.
+The text ""No rows found"" is displayed in the center of the table area.";Not Run;(To be filled during execution);(To be filled if Fail)
+TC-ELEM-019;Verify changing the number of rows displayed per page.;Medium;User is on the Web Tables page. More than 5 records exist in the table (add 3-4 new records first if necessary). The page is currently showing 10 rows.;"1. Locate the ""Rows per page"" dropdown at the bottom of the table.
+2. Click the dropdown.
+3. Select ""5 rows"".";N/A;"The table re-renders to display a maximum of 5 rows on the current page.
+The page navigation information updates (e.g., from ""Page 1 of 1"" to ""Page 1 of 2"").";Not Run;(To be filled during execution);(To be filled if Fail)
+TC-ELEM-020;"Verify the ""Double Click Me"" button.";High;User is on the Buttons page. No confirmation messages are displayed.;1. Perform a rapid double-click action on the button labeled Double Click Me.;N/A;"A confirmation message ""You have done a double click"" appears below the buttons.";Not Run;(To be filled during execution);(To be filled if Fail)
+TC-ELEM-021;"Verify the ""Right Click Me"" button.";High;User is on the Buttons page. No confirmation messages are displayed.;1. Perform a right-click action on the button labeled Right Click Me.;N/A;"A confirmation message ""You have done a right click"" appears below the buttons.
+(Note: The browser's standard right-click context menu may also appear).";Not Run;(To be filled during execution);(To be filled if Fail)
+TC-ELEM-022;"Verify the ""Click Me"" button (dynamic click).";High;User is on the Buttons page. No confirmation messages are displayed.;1. Perform a standard single left-click on the button labeled Click Me.;N/A;"A confirmation message ""You have done a dynamic click"" appears below the buttons.";Not Run;(To be filled during execution);(To be filled if Fail)
+TC-ELEM-023;"Verify a single click on the ""Double Click Me"" button has no effect.";Medium;User is on the Buttons page. No confirmation messages are displayed.;1. Perform a single left-click on the Double Click Me button.;N/A;No confirmation message appears. The page state remains unchanged.;Not Run;(To be filled during execution);(To be filled if Fail)
+TC-ELEM-024;"Verify a left click on the ""Right Click Me"" button has no effect.";Medium;User is on the Buttons page. No confirmation messages are displayed.;1. Perform a single left-click on the Right Click Me button.;N/A;No confirmation message appears. The page state remains unchanged.;Not Run;(To be filled during execution);(To be filled if Fail)
+TC-ELEM-025;Verify that messages from different buttons can co-exist.;Medium;User is on the Buttons page. No confirmation messages are displayed.;"1. Perform a double-click on the ""Double Click Me"" button.
+2. Perform a right-click on the ""Right Click Me"" button.
+3. Perform a single click on the ""Click Me"" button.";N/A;"After all three actions are completed, all three distinct confirmation messages (""...double click"", ""...right click"", and ""...dynamic click"") are visible on the page simultaneously.";Not Run;(To be filled during execution);(To be filled if Fail)
+TC-ELEM-026;Verify standard button activation using the keyboard.;Low;User is on the Buttons page. No confirmation messages are displayed.;"1. Press the Tab key until the Click Me button has keyboard focus (it will be outlined).
+2. Press the Enter key.";N/A;"The confirmation message ""You have done a dynamic click"" appears below the buttons, confirming that the standard click event was triggered via the keyboard.";Not Run;(To be filled during execution);(To be filled if Fail)
+TC-ELEM-027;"Verify the static ""Home"" link opens a new tab.";High;User is on the Links page.;1. Click the link with the text Home.;N/A;"A new browser tab opens.
+The new tab navigates to the URL https://demoqa.com/.
+The original tab remains on the /links page.";Not Run;(To be filled during execution);(To be filled if Fail)
+TC-ELEM-028;"Verify the dynamic ""Home"" link opens a new tab.";High;User is on the Links page.;1. Click the link that begins with the text Home and has a dynamic ID (e.g., Home...).;N/A;"A new browser tab opens.
+The new tab navigates to the URL https://demoqa.com/.
+The original tab remains on the /links page.";Not Run;(To be filled during execution);(To be filled if Fail)
+TC-ELEM-029;"Verify the ""Created"" link triggers a 201 response.";High;User is on the Links page. The response area at the bottom is empty.;1. Click the link with the text Created.;N/A;"The page does not navigate away.
+A message appears at the bottom of the page: Link has responded with status 201 and status text Created";Not Run;(To be filled during execution);(To be filled if Fail)
+TC-ELEM-030;"Verify the ""No Content"" link triggers a 204 response.";Medium;User is on the Links page. The response area at the bottom is empty.;1. Click the link with the text No Content.;N/A;"The page does not navigate away.
+A message appears at the bottom of the page: Link has responded with status 204 and status text No Content";Not Run;(To be filled during execution);(To be filled if Fail)
+TC-ELEM-031;"Verify the ""Moved"" link triggers a 301 response.";Medium;User is on the Links page. The response area at the bottom is empty.;1. Click the link with the text Moved.;N/A;"The page does not navigate away.
+A message appears at the bottom of the page: Link has responded with status 301 and status text Moved Permanently";Not Run;(To be filled during execution);(To be filled if Fail)
+TC-ELEM-032;"Verify ""Bad Request"" link triggers 400.";Medium;User is on the Links page. The response area at the bottom is empty.;1. Click the link with the text Bad Request.;N/A;A message appears: Link has responded with status 400 and status text Bad Request;Not Run;(To be filled during execution);(To be filled if Fail)
+TC-ELEM-033;"Verify ""Unauthorized"" link triggers 401.";Medium;User is on the Links page. The response area at the bottom is empty.;1. Click the link with the text Unauthorized.;N/A;A message appears: Link has responded with status 401 and status text Unauthorized;Not Run;(To be filled during execution);(To be filled if Fail)
+TC-ELEM-034;"Verify ""Forbidden"" link triggers 403.";Medium;User is on the Links page. The response area at the bottom is empty.;1. Click the link with the text Forbidden.;N/A;A message appears: Link has responded with status 403 and status text Forbidden;Not Run;(To be filled during execution);(To be filled if Fail)
+TC-ELEM-035;"Verify ""Not Found"" link triggers 404.";Medium;User is on the Links page. The response area at the bottom is empty.;1. Click the link with the text Not Found.;N/A;A message appears: Link has responded with status 404 and status text Not Found;Not Run;(To be filled during execution);(To be filled if Fail)
+TC-ELEM-036;Verify the response message updates correctly when clicking multiple API links.;High;User is on the Links page. The response area at the bottom is empty.;"1. Click the link with the text Created.
+2. Verify the response.
+3. Now, click the link with the text Not Found.";N/A;"1. The response message ""Link has responded with status 201 and status text Created"" appears.
+2. After step 3, the response message is replaced with ""Link has responded with status 404 and status text Not Found"". Only one message is visible at a time.";Not Run;(To be filled during execution);(To be filled if Fail)
+TC-ELEM-037;Verify the valid image loads correctly.;High;"User is on the Broken Links - Images page.
+Browser Developer Tools are available (F12 key).";"1. Open Developer Tools and select the ""Network"" tab.
+2. Visually inspect the first image on the page under the ""Valid image"" heading.
+3. In the Network tab, find the request for the image file (Toolsqa.jpg).";N/A;"Visual: The ""Tools QA"" company logo is displayed clearly, without any signs of being broken.
+Network: The request for Toolsqa.jpg has a Status Code of 200 (OK).";Not Run;(To be filled during execution);(To be filled if Fail)
+TC-ELEM-038;Verify the broken image fails to load and returns a 404 error.;High;"User is on the Broken Links - Images page.
+Browser Developer Tools are available (F12 key).";"1. Open Developer Tools and select the ""Network"" tab.
+2. Visually inspect the second image on the page under the ""Broken image"" heading.
+3. In the Network tab, find the request for the image file (Toolsqa_1.jpg).";N/A;"Visual: A standard broken image icon is displayed instead of a picture.
+Network: The request for Toolsqa_1.jpg has a Status Code of 404 (Not Found).";Not Run;(To be filled during execution);(To be filled if Fail)
+TC-ELEM-039;Verify successful file download.;High;User is on the Upload and Download page.;"1. Click the Download button.
+2. Observe the browser's download manager or prompts.
+3. Once the download is complete, navigate to the download location on your local machine.
+4. Attempt to open the downloaded file.";N/A;"1. The browser initiates a file download.
+2. The downloaded file is named sampleFile.jpeg.
+3. The file is a valid JPEG image and can be opened successfully with a standard image viewer.
+4. The file is not corrupted.";Not Run;(To be filled during execution);(To be filled if Fail)
+TC-ELEM-040;Verify successful file selection for upload.;High;"1. User is on the Upload and Download page.
+2. A sample file (e.g., a simple .txt or .png file) exists on the user's local machine. Let's name it TestUpload.txt.";"1. Click the Select a file (or ""Choose File"") button.
+2. The operating system's file selection dialog appears.
+3. Navigate to and select the test file (TestUpload.txt).
+4. Click the ""Open"" button in the dialog.";A sample file, e.g., TestUpload.txt.;"The file selection dialog closes.
+A file path is displayed on the webpage next to the button.
+The displayed path is C:\fakepath\TestUpload.txt.
+(Note: C:\fakepath\ is a security feature in modern browsers to prevent websites from knowing your local file structure. This specific text is expected.)";Not Run;(To be filled during execution);(To be filled if Fail)
+TC-ELEM-041;Verify behavior when the file selection is canceled.;Medium;User is on the Upload and Download page.;"1. Click the Select a file (or ""Choose File"") button.
+2. When the operating system's file selection dialog appears, click the Cancel button.";N/A;"The file selection dialog closes.
+The page remains in its original state.
+No file path is displayed next to the button.";Not Run;(To be filled during execution);(To be filled if Fail)
+TC-ELEM-042;Verify a disabled button becomes enabled after 5 seconds.;High;User is on the Dynamic Properties page.;"1. Immediately after the page loads, observe the button labeled Enable After 5 Seconds.
+2. Attempt to click the button.
+3. Wait for approximately 6 seconds.
+4. Observe the button again and attempt to click it.";N/A;"1. The button is visually grayed out and has the disabled HTML attribute.
+2. The click action has no effect.
+3. After the delay, the button is no longer grayed out and is clickable.
+4. The click action produces a standard button-press visual effect.";Not Run;(To be filled during execution);(To be filled if Fail)
+TC-ELEM-043;Verify a button's text color changes after 5 seconds.;High;User is on the Dynamic Properties page.;"1. Immediately after the page loads, observe the text color of the button labeled Color Change.
+2. Wait for approximately 6 seconds.
+3. Observe the text color of the button again.";N/A;"1. The button's text is black (or the default text color).
+2. After the delay, the button's text color changes to red (#dc3545).";Not Run;(To be filled during execution);(To be filled if Fail)
+TC-ELEM-044;Verify a button becomes visible after 5 seconds.;High;User is on the Dynamic Properties page.;"1. Immediately after the page loads, scan the page for a button with the text Will be visible after 5 seconds.
+2. Wait for approximately 6 seconds.
+3. Scan the page again.";N/A;"1. The button is not present or visible in the page's Document Object Model (DOM).
+2. After the delay, the button appears on the page below the ""Color Change"" button.
+3. The newly visible button is enabled and clickable.";Not Run;(To be filled during execution);(To be filled if Fail)

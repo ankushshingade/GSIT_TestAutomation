@@ -1,0 +1,11 @@
+Test Scenario ID,Feature/Module,Scenario Title/Description,Priority
+TS-ELEM-01,Elements,"Verify the functionality of all interactive page elements (Text Box, Check Box, Radio Button, Buttons, etc.).",High
+TS-FORM-01,Forms,"Verify user submission of the ""Practice Form"" with various valid and invalid data combinations.",High
+TS-AFW-01,"Alerts, Frame & Windows","Verify the application's ability to handle browser alerts, new windows/tabs, and iFrames.",Medium
+TS-WIDG-01,Widgets,"Verify the functionality of interactive widgets like Accordions, Date Pickers, Sliders, and Progress Bars.",Medium
+TS-INT-01,Interactions,"Verify user interactions such as drag-and-drop, sortable lists, and resizable elements.",Medium
+TS-BOOK-01,Book Store Application,"Verify core user flows including Login, Registration, and Logout.",High
+TS-BOOK-02,Book Store Application,"Verify book search and profile functionality, including adding and removing books from a user's collection.",High
+,,,
+,,,
+,,https://demoqa.com/,

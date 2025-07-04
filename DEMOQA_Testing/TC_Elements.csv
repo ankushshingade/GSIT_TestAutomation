@@ -1,0 +1,149 @@
+Test Case ID,TC-ELEM-001,TC-ELEM-002,TC-ELEM-003,TC-ELEM-004,TC-ELEM-005,TC-ELEM-006,TC-ELEM-007,TC-ELEM-008,TC-ELEM-009,TC-ELEM-010,TC-ELEM-011,TC-ELEM-012,TC-ELEM-013,TC-ELEM-014,TC-ELEM-015,TC-ELEM-016,TC-ELEM-017,TC-ELEM-018,TC-ELEM-019,TC-ELEM-020,TC-ELEM-021,TC-ELEM-022,TC-ELEM-023,TC-ELEM-024,TC-ELEM-025,TC-ELEM-026,TC-ELEM-027,TC-ELEM-028,TC-ELEM-029,TC-ELEM-030,TC-ELEM-031,TC-ELEM-032,TC-ELEM-033,TC-ELEM-034,TC-ELEM-035,TC-ELEM-036,TC-ELEM-037,TC-ELEM-038,TC-ELEM-039,TC-ELEM-040,TC-ELEM-041,TC-ELEM-042,TC-ELEM-043,TC-ELEM-044,TC-ELEM-045
+Test Case Title,Verify successful submission with valid data.,Verify form behavior with an invalid email format.,Verify the expand and collapse functionality of the tree.,"Verify selecting a parent checkbox (""Home"") selects all its children.","Verify deselecting a parent checkbox (""Home"") deselects all its children.",Verify selecting an individual child checkbox.,Verify a parent is automatically selected when all its children are checked manually.,Verify a parent is automatically deselected when one of its children is unchecked.,"Verify selecting the ""Yes"" radio button.","Verify selecting the ""Impressive"" radio button.",Verify that only one radio button can be selected at a time (mutual exclusivity).,"Verify the ""No"" radio button is disabled and cannot be selected.",Verify adding a new record with valid data.,Verify editing an existing record.,Verify deleting an existing record.,Verify form validation for invalid data.,Verify search functionality with an existing value.,Verify search functionality with a non-existent value.,Verify changing the number of rows displayed per page.,"Verify the ""Double Click Me"" button.","Verify the ""Right Click Me"" button.","Verify the ""Click Me"" button (dynamic click).","Verify a single click on the ""Double Click Me"" button has no effect.","Verify a left click on the ""Right Click Me"" button has no effect.",Verify that messages from different buttons can co-exist.,Verify standard button activation using the keyboard.,"Verify the static ""Home"" link opens a new tab.","Verify the dynamic ""Home"" link opens a new tab.","Verify the ""Created"" link triggers a 201 response.","Verify the ""No Content"" link triggers a 204 response.","Verify the ""Moved"" link triggers a 301 response.","Verify ""Bad Request"" link triggers 400.","Verify ""Unauthorized"" link triggers 401.","Verify ""Forbidden"" link triggers 403.","Verify ""Not Found"" link triggers 404.",Verify the response message updates correctly when clicking multiple API links.,Verify the valid image loads correctly.,Verify the broken image fails to load and returns a 404 error.,Verify successful file download.,Verify successful file selection for upload.,Verify behavior when the file selection is canceled.,Verify a disabled button becomes enabled after 5 seconds.,Verify a button's text color changes after 5 seconds.,Verify a button becomes visible after 5 seconds.,
+Priority,High,High,High,High,High,High,Medium,Medium,High,High,High,High,High,High,High,High,High,Medium,Medium,High,High,High,Medium,Medium,Medium,Low,High,High,High,Medium,Medium,Medium,Medium,Medium,Medium,High,High,High,High,High,Medium,High,High,High,
+Preconditions,"The user is on the ""Text Box"" page and all fields are empty.","The user is on the ""Text Box"" page and all fields are empty.",User is on the Checkbox page. The tree is fully collapsed.,User is on the Checkbox page. The tree is fully collapsed.,All checkboxes in the tree are selected. The result text is displayed.,User is on the Checkbox page. The tree is fully collapsed.,User is on the Checkbox page. The tree is fully collapsed.,"The ""Documents"", ""WorkSpace"", ""React"", ""Angular"", and ""Veu"" checkboxes are all selected.",User is on the Radio Button page. No radio button is selected.,User is on the Radio Button page. No radio button is selected.,User is on the Radio Button page. No radio button is selected.,User is on the Radio Button page.,User is on the Web Tables page.,"User is on the Web Tables page. The first record for ""Cierra"" exists.","User is on the Web Tables page. The second record for ""Alden"" exists.",User is on the Web Tables page.,User is on the Web Tables page with the default records loaded.,User is on the Web Tables page with the default records loaded.,User is on the Web Tables page. More than 5 records exist in the table (add 3-4 new records first if necessary). The page is currently showing 10 rows.,User is on the Buttons page. No confirmation messages are displayed.,User is on the Buttons page. No confirmation messages are displayed.,User is on the Buttons page. No confirmation messages are displayed.,User is on the Buttons page. No confirmation messages are displayed.,User is on the Buttons page. No confirmation messages are displayed.,User is on the Buttons page. No confirmation messages are displayed.,User is on the Buttons page. No confirmation messages are displayed.,User is on the Links page.,User is on the Links page.,User is on the Links page. The response area at the bottom is empty.,User is on the Links page. The response area at the bottom is empty.,User is on the Links page. The response area at the bottom is empty.,User is on the Links page. The response area at the bottom is empty.,User is on the Links page. The response area at the bottom is empty.,User is on the Links page. The response area at the bottom is empty.,User is on the Links page. The response area at the bottom is empty.,User is on the Links page. The response area at the bottom is empty.,"User is on the Broken Links - Images page.
+Browser Developer Tools are available (F12 key).","User is on the Broken Links - Images page.
+Browser Developer Tools are available (F12 key).",User is on the Upload and Download page.,"1. User is on the Upload and Download page.
+2. A sample file (e.g., a simple .txt or .png file) exists on the user's local machine. Let's name it TestUpload.txt.",User is on the Upload and Download page.,User is on the Dynamic Properties page.,User is on the Dynamic Properties page.,User is on the Dynamic Properties page.,
+Test Steps,"1. Enter a valid name in the ""Full Name"" field.
+2. Enter a valid email in the ""Email"" field.
+3. Enter an address in the ""Current Address"" field.
+4. Enter an address in the ""Permanent Address"" field.
+5. Click the ""Submit"" button.","1. Enter a valid name in the ""Full Name"" field.
+2. Enter an invalid email in the ""Email"" field.
+3. Enter an address in the ""Current Address"" field.
+4. Click the ""Submit"" button.","1. Click the + icon to the right of the ""Home"" checkbox.
+2. Click the + icon next to ""Documents"".
+3. Click the - icon next to ""Documents"".
+4. Click the - icon to the right of the ""Home"" checkbox.","1. Click the + icon to expand the ""Home"" directory.
+2. Click the checkbox next to ""Home"".","1. Click the checkbox next to ""Home"" to deselect it.","1. Click the + icon to expand ""Home"".
+2. Click the + icon to expand ""Downloads"".
+3. Click the checkbox next to ""Word File.doc"".","1. Expand the tree to show the contents of ""WorkSpace"" (Home -> Documents -> WorkSpace).
+2. Click the checkbox for ""React"".
+3. Click the checkbox for ""Angular"".
+4. Click the checkbox for ""Veu"".","1. Expand the tree to show the contents of ""WorkSpace"".
+2. Uncheck the ""React"" checkbox.","1. Observe the initial state of the page.
+2. Click on the ""Yes"" radio button.","1. Observe the initial state of the page.
+2. Click on the ""Impressive"" radio button.","1. Click the ""Yes"" radio button.
+2. Verify the result.
+3. Now, click the ""Impressive"" radio button.","1. Observe the ""No"" radio button.
+2. Hover the mouse cursor over the ""No"" radio button.
+3. Attempt to click the ""No"" radio button.","1. Click the Add button.
+2. Fill out all fields in the ""Registration Form"" modal.
+3. Click the Submit button.","1. In the row for ""Cierra"", click the Edit icon (pencil).
+2. In the ""Registration Form"" modal, change the value in the ""Age"" field.
+3. Change the value in the ""Salary"" field.
+4. Click the Submit button.","1. In the row for ""Alden"", click the Delete icon (trash can).","1. Click the Add button.
+2. Enter an invalid email format in the ""Email"" field.
+3. Enter a non-numeric value in the ""Age"" field.
+4. Click the Submit button.","1. Type a search term into the Search box that exists in the table (e.g., a first name).",1. Type a search term into the Search box that does not exist in the table.,"1. Locate the ""Rows per page"" dropdown at the bottom of the table.
+2. Click the dropdown.
+3. Select ""5 rows"".",1. Perform a rapid double-click action on the button labeled Double Click Me.,1. Perform a right-click action on the button labeled Right Click Me.,1. Perform a standard single left-click on the button labeled Click Me.,1. Perform a single left-click on the Double Click Me button.,1. Perform a single left-click on the Right Click Me button.,"1. Perform a double-click on the ""Double Click Me"" button.
+2. Perform a right-click on the ""Right Click Me"" button.
+3. Perform a single click on the ""Click Me"" button.","1. Press the Tab key until the Click Me button has keyboard focus (it will be outlined).
+2. Press the Enter key.",1. Click the link with the text Home.,"1. Click the link that begins with the text Home and has a dynamic ID (e.g., Home...).",1. Click the link with the text Created.,1. Click the link with the text No Content.,1. Click the link with the text Moved.,1. Click the link with the text Bad Request.,1. Click the link with the text Unauthorized.,1. Click the link with the text Forbidden.,1. Click the link with the text Not Found.,"1. Click the link with the text Created.
+2. Verify the response.
+3. Now, click the link with the text Not Found.","1. Open Developer Tools and select the ""Network"" tab.
+2. Visually inspect the first image on the page under the ""Valid image"" heading.
+3. In the Network tab, find the request for the image file (Toolsqa.jpg).","1. Open Developer Tools and select the ""Network"" tab.
+2. Visually inspect the second image on the page under the ""Broken image"" heading.
+3. In the Network tab, find the request for the image file (Toolsqa_1.jpg).","1. Click the Download button.
+2. Observe the browser's download manager or prompts.
+3. Once the download is complete, navigate to the download location on your local machine.
+4. Attempt to open the downloaded file.","1. Click the Select a file (or ""Choose File"") button.
+2. The operating system's file selection dialog appears.
+3. Navigate to and select the test file (TestUpload.txt).
+4. Click the ""Open"" button in the dialog.","1. Click the Select a file (or ""Choose File"") button.
+2. When the operating system's file selection dialog appears, click the Cancel button.","1. Immediately after the page loads, observe the button labeled Enable After 5 Seconds.
+2. Attempt to click the button.
+3. Wait for approximately 6 seconds.
+4. Observe the button again and attempt to click it.","1. Immediately after the page loads, observe the text color of the button labeled Color Change.
+2. Wait for approximately 6 seconds.
+3. Observe the text color of the button again.","1. Immediately after the page loads, scan the page for a button with the text Will be visible after 5 seconds.
+2. Wait for approximately 6 seconds.
+3. Scan the page again.",
+Test Data,"Full Name: John Doe
+Email: john.doe@example.com
+Current Address: 123 Main St, Anytown, USA
+Permanent Address: 456 Oak Ave, Anytown, USA","Full Name: Jane Smith
+Email: jane.smith-invalid-email
+Current Address: 987 Pine Ln",N/A,N/A,N/A,N/A,N/A,N/A,N/A,N/A,N/A,N/A,"First Name: Test
+Last Name: User
+Email: test.user@example.com
+Age: 30
+Salary: 50000
+Department: QA","Age: 45
+Salary: 15000",N/A,"Email: invalid-email
+Age: thirty",Search Term: Kierra,Search Term: NonExistentName,N/A,N/A,N/A,N/A,N/A,N/A,N/A,N/A,N/A,N/A,N/A,N/A,N/A,N/A,N/A,N/A,N/A,N/A,N/A,N/A,N/A,"A sample file, e.g., TestUpload.txt.",N/A,N/A,N/A,N/A,
+Expected Result,"A summary box appears below the form.
+The summary box contains four lines, correctly displaying the Name, Email, Current Address, and Permanent Address exactly as entered.
+","The form does not submit.
+The ""Email"" input field's border turns red to indicate an error.
+No summary box is displayed below the form.","1. The ""Desktop"", ""Documents"", and ""Downloads"" directories become visible.
+2. The ""WorkSpace"" and ""Office"" directories become visible.
+3. The ""WorkSpace"" and ""Office"" directories are hidden.
+4. The entire tree collapses, showing only the ""Home"" checkbox. The result text area remains empty throughout.","All checkboxes in the entire tree become checked.
+The result text area displays:
+You have selected : home, desktop, notes, commands, documents, workspace, react, angular, veu, office, public, private, classified, general, downloads, wordFile, excelFile","All checkboxes in the tree become unchecked. The result text area becomes empty (the ""You have selected :"" text disappears).","The result text area displays:
+You have selected : wordFile","After step 4, the checkboxes for ""React"", ""Angular"", ""Veu"", AND ""WorkSpace"" are checked.
+
+The result text area displays:
+You have selected :
+react
+angular
+veu
+workspace","The ""WorkSpace"" checkbox becomes unchecked automatically.
+""React"" is unchecked, but ""Angular"" and ""Veu"" remain checked.
+The result text area updates to display:
+You have selected :
+angular
+veu","1. Initially, no radio button is selected and there is no result text.
+2. The ""Yes"" radio button becomes selected.
+3. The text ""You have selected Yes"" appears below the buttons.","1. Initially, no radio button is selected and there is no result text.
+2. The ""Impressive"" radio button becomes selected.
+3. The text ""You have selected Impressive"" appears below the buttons.","1. ""Yes"" is selected. The result text is ""You have selected Yes"".
+2. The ""Yes"" button becomes unselected. The ""Impressive"" button becomes selected.
+3. The result text updates to ""You have selected Impressive"".","1. The ""No"" button is visually grayed out, indicating it is disabled.
+2. The cursor changes to a ""not-allowed"" symbol (e.g., a circle with a slash through it).
+3. Clicking the button has no effect. The button does not become selected, and no result text appears. The state of the other radio buttons does not change.","The ""Registration Form"" modal closes.
+A new row is added to the table containing the exact data entered.
+The table now has 4 rows (if starting from the default 3).","The ""Registration Form"" modal closes.
+The row for ""Cierra"" is updated in the table.
+The ""Age"" for Cierra's record now displays ""45"".
+The ""Salary"" for Cierra's record now displays ""15000"".
+Other fields in the row remain unchanged.","
+The row containing the data for ""Alden"" is immediately removed from the web table.
+The table now has 2 rows (if starting from the default 3).","The ""Registration Form"" modal remains open.
+The ""Email"" and ""Age"" input fields are highlighted with a red border, indicating a validation error.
+No new record is added to the table.","The table automatically filters to show only the row(s) containing the search term ""Kierra"".
+In this case, only one row is displayed.","The table body becomes empty.
+The text ""No rows found"" is displayed in the center of the table area.","The table re-renders to display a maximum of 5 rows on the current page.
+The page navigation information updates (e.g., from ""Page 1 of 1"" to ""Page 1 of 2"").","A confirmation message ""You have done a double click"" appears below the buttons.","A confirmation message ""You have done a right click"" appears below the buttons.
+(Note: The browser's standard right-click context menu may also appear).","A confirmation message ""You have done a dynamic click"" appears below the buttons.",No confirmation message appears. The page state remains unchanged.,No confirmation message appears. The page state remains unchanged.,"After all three actions are completed, all three distinct confirmation messages (""...double click"", ""...right click"", and ""...dynamic click"") are visible on the page simultaneously.","The confirmation message ""You have done a dynamic click"" appears below the buttons, confirming that the standard click event was triggered via the keyboard.","A new browser tab opens.
+The new tab navigates to the URL https://demoqa.com/.
+The original tab remains on the /links page.","A new browser tab opens.
+The new tab navigates to the URL https://demoqa.com/.
+The original tab remains on the /links page.","The page does not navigate away.
+A message appears at the bottom of the page: Link has responded with status 201 and status text Created","The page does not navigate away.
+A message appears at the bottom of the page: Link has responded with status 204 and status text No Content","The page does not navigate away.
+A message appears at the bottom of the page: Link has responded with status 301 and status text Moved Permanently",A message appears: Link has responded with status 400 and status text Bad Request,A message appears: Link has responded with status 401 and status text Unauthorized,A message appears: Link has responded with status 403 and status text Forbidden,A message appears: Link has responded with status 404 and status text Not Found,"1. The response message ""Link has responded with status 201 and status text Created"" appears.
+2. After step 3, the response message is replaced with ""Link has responded with status 404 and status text Not Found"". Only one message is visible at a time.","Visual: The ""Tools QA"" company logo is displayed clearly, without any signs of being broken.
+Network: The request for Toolsqa.jpg has a Status Code of 200 (OK).","Visual: A standard broken image icon is displayed instead of a picture.
+Network: The request for Toolsqa_1.jpg has a Status Code of 404 (Not Found).","1. The browser initiates a file download.
+2. The downloaded file is named sampleFile.jpeg.
+3. The file is a valid JPEG image and can be opened successfully with a standard image viewer.
+4. The file is not corrupted.","The file selection dialog closes.
+A file path is displayed on the webpage next to the button.
+The displayed path is C:\fakepath\TestUpload.txt.
+(Note: C:\fakepath\ is a security feature in modern browsers to prevent websites from knowing your local file structure. This specific text is expected.)","The file selection dialog closes.
+The page remains in its original state.
+No file path is displayed next to the button.","1. The button is visually grayed out and has the disabled HTML attribute.
+2. The click action has no effect.
+3. After the delay, the button is no longer grayed out and is clickable.
+4. The click action produces a standard button-press visual effect.","1. The button's text is black (or the default text color).
+2. After the delay, the button's text color changes to red (#dc3545).","1. The button is not present or visible in the page's Document Object Model (DOM).
+2. After the delay, the button appears on the page below the ""Color Change"" button.
+3. The newly visible button is enabled and clickable.",
+Status,Not Run,Not Run,Not Run,Not Run,Not Run,Not Run,Not Run,Not Run,Not Run,Not Run,Not Run,Not Run,Not Run,Not Run,Not Run,Not Run,Not Run,Not Run,Not Run,Not Run,Not Run,Not Run,Not Run,Not Run,Not Run,Not Run,Not Run,Not Run,Not Run,Not Run,Not Run,Not Run,Not Run,Not Run,Not Run,Not Run,Not Run,Not Run,Not Run,Not Run,Not Run,Not Run,Not Run,Not Run,
+Actual Result,(To be filled during execution),(To be filled during execution),(To be filled during execution),(To be filled during execution),(To be filled during execution),(To be filled during execution),(To be filled during execution),(To be filled during execution),(To be filled during execution),(To be filled during execution),(To be filled during execution),(To be filled during execution),(To be filled during execution),(To be filled during execution),(To be filled during execution),(To be filled during execution),(To be filled during execution),(To be filled during execution),(To be filled during execution),(To be filled during execution),(To be filled during execution),(To be filled during execution),(To be filled during execution),(To be filled during execution),(To be filled during execution),(To be filled during execution),(To be filled during execution),(To be filled during execution),(To be filled during execution),(To be filled during execution),(To be filled during execution),(To be filled during execution),(To be filled during execution),(To be filled during execution),(To be filled during execution),(To be filled during execution),(To be filled during execution),(To be filled during execution),(To be filled during execution),(To be filled during execution),(To be filled during execution),(To be filled during execution),(To be filled during execution),(To be filled during execution),
+Bug ID,(To be filled if Fail),(To be filled if Fail),(To be filled if Fail),(To be filled if Fail),(To be filled if Fail),(To be filled if Fail),(To be filled if Fail),(To be filled if Fail),(To be filled if Fail),(To be filled if Fail),(To be filled if Fail),(To be filled if Fail),(To be filled if Fail),(To be filled if Fail),(To be filled if Fail),(To be filled if Fail),(To be filled if Fail),(To be filled if Fail),(To be filled if Fail),(To be filled if Fail),(To be filled if Fail),(To be filled if Fail),(To be filled if Fail),(To be filled if Fail),(To be filled if Fail),(To be filled if Fail),(To be filled if Fail),(To be filled if Fail),(To be filled if Fail),(To be filled if Fail),(To be filled if Fail),(To be filled if Fail),(To be filled if Fail),(To be filled if Fail),(To be filled if Fail),(To be filled if Fail),(To be filled if Fail),(To be filled if Fail),(To be filled if Fail),(To be filled if Fail),(To be filled if Fail),(To be filled if Fail),(To be filled if Fail),(To be filled if Fail),
