@@ -14,6 +14,16 @@ abstract class BankAccount{
 	}
 	
 	abstract void calculateInterest();
+	
+//	abstract static void staticMethod();	// Not possible.
+//	
+//	abstract protected void protectedMethod();	// Possible.
+//	
+//	abstract public void publicMethod();	// Possible.
+//	
+//	abstract final void finalMethod();	// Not possible. 
+	
+	
 }
 
 class savingAccount extends BankAccount{
@@ -44,11 +54,11 @@ public class UnderstandingAbstraction2 {
 		savingAccount SV = new savingAccount("Shivam", 30000);
 		SV.showBalance();
 		SV.calculateInterest();
-		
+				
 		currentAccount AS = new currentAccount("Ankush", 400000);
 		AS.showBalance();
 		AS.calculateInterest();
-				
+						
 				
 	}
 

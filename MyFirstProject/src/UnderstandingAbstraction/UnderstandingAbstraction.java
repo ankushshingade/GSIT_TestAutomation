@@ -6,13 +6,15 @@ abstract class Animal
 	
 	abstract void Sound(); // It has no body, it is just an idea.
 	
+	abstract void Walk();
+	
 	void Sleep()
 	{
 		System.out.println("Animal is sleeping.");
 	}
 }
 
-class Dog extends Animal
+abstract class Dog extends Animal
 {
 
 	@Override
@@ -23,14 +25,32 @@ class Dog extends Animal
 	
 }
 
+class petDog extends Dog
+{
+
+	@Override
+	void Walk() {
+
+		System.out.println("Walk pet dogs. Walk method inside petDog.");
+		
+	}
+	
+	@Override
+	void Sound() {
+		System.out.println("PetDog barking");
+	}
+	
+}
+
 
 public class UnderstandingAbstraction {
 	
 	public static void main(String[] args) {
 
-		Animal A1 = new Dog();
+		Animal A1 = new petDog();
 		A1.Sound();
 		A1.Sleep();
+		A1.Walk();
 		
 		}
 }

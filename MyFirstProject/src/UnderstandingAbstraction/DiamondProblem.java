@@ -6,6 +6,11 @@ interface A{
 		
 		System.out.println("New method of interface A is called.");
 	}
+	
+	default void newMethod3() {
+		
+		System.out.println("New Method 3 called from interface A.");
+	}
 }
 
 interface B{
@@ -30,6 +35,11 @@ class C implements A,B{
 		
 		System.out.println("C's New method is called.");
 	}
+	
+	public void newMethod2() {
+		
+		System.out.println("New Method2 is called from class C.");
+	}
 }
 public class DiamondProblem {
 
@@ -45,9 +55,9 @@ public class DiamondProblem {
 		A C2 = new C();
 		C2.newMethod();
 		
-		C2.newMethodA();
-		
-		C2.newMethodB();
+//		C2.newMethodA();
+//		
+//		C2.newMethodB();
 
 	}
 
