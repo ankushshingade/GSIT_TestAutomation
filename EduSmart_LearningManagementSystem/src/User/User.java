@@ -1,5 +1,7 @@
 package User;
 
+import java.util.ArrayList;
+
 interface ProgressTrackable{
 	void trackProgress();
 }
@@ -9,6 +11,8 @@ abstract public class User {
 	private String name;
 	private String email;
 	private String userID;
+	
+	private static ArrayList<String> courseList = new ArrayList<>();
 	
 	// Constructors for User
 	User(String name, String email, String userID){
@@ -25,7 +29,8 @@ abstract public class User {
 	abstract void viewProfile(); 
 
 	// Welcome message
-	final void displayWelcome() {
+	public final void displayWelcome() {
+		System.out.println("Welcome to EduSmart, "+name+ "!");
 		
 	}
 
@@ -53,53 +58,17 @@ abstract public class User {
 		this.userID = userID;
 	}
 
+	public ArrayList<String> getCourseList() {
+		return courseList;
+	}
+
+	public void setCourseList(String courseList) {
+		this.courseList.add(courseList);
+		courseList.
+	}
+
 }
 
-class Student extends User implements ProgressTrackable{
-
-	String enrolledCourse1;
-	String enrolledCourse2;
-	
-	@Override
-	public void trackProgress() {
-		
-	}
-	
-	@Override
-	void viewProfile() {
-		System.out.println("Student name: "+getName());
-		System.out.println("Student email: "+getEmail());
-		System.out.println("Student userID: "+getUserID());	
-	}
-	
-	public void  enrollCourse(String courseName) {
-		
-	}
-}
-
-class Instructor extends User {
-
-	@Override
-	void viewProfile() {
-		System.out.println("Instructor name: "+getName());
-		System.out.println("Instructor email: "+getEmail());
-		System.out.println("Instructor userID: "+getUserID());	
-		
-	}
-	
-}
-
-class Admin extends User {
-
-	@Override
-	void viewProfile() {
-		System.out.println("Admin name: "+getName());
-		System.out.println("Admin email: "+getEmail());
-		System.out.println("Admin userID: "+getUserID());	
-		
-	}
-	
-}
 
 class Course {
 	
@@ -116,10 +85,13 @@ class Course {
 	
 	Course(String title){
 		this.title = title;
-		this.maxStudents = 2;
+		this.maxStudents = 20;
 	}
 	
-	void showCourseDetails() {
-		
+	public void showCourseDetails() {
+		System.out.println("Details for "+title);
+		System.out.println("Duration: "+durationInHours);
+		System.out.println("Maximum students allowed: "+maxStudents);
+		System.out.println("Number of students enrolled for course: ");
 	}
 }
