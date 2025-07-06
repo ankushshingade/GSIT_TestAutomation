@@ -1,9 +1,12 @@
 package User;
+import User.Course;
+import java.util.ArrayList;
 
 public class Instructor extends User {
 
 	private String createdCourse1;
 	private String createdCourse2;
+	
 	
     public Instructor(String name, String email, String userId) {
         super(name, email, userId);
@@ -29,14 +32,17 @@ public class Instructor extends User {
     public void setCreatedCourse2(String createdCourse2) {
         this.createdCourse2 = createdCourse2;
     }
+    
+
 
 // Method to create a course	
-	public void createCourse(String courseName, int durationInHoyrs, int maxStudents) {
+	public void createCourse(String courseName) {
 		
 		 if (createdCourse1 == null) {
 	            createdCourse1 = courseName;
 	            System.out.println(getName()+" Created \"" + courseName+ "\" course.");
 	            setCourseList(courseName);
+	            
 	        } else if (createdCourse2 == null) {
 	            createdCourse2 = courseName;
 	            System.out.println(getName()+" Created \"" + courseName+ "\" course.");
@@ -44,6 +50,16 @@ public class Instructor extends User {
 	        } else {
 	            System.out.println("Cannot create more than 2 courses per Instructor : Maximum courses (2) already created.");
 	        }
+		
+	}
+	
+// Method to keep record of course details.
+	
+	public void updateCourseDetails(String title, int durationInHours, int maxStudents) {
+		
+		ArrayList<Course> temp = new ArrayList<>();
+		
+		temp.add(new Course(title, durationInHours, maxStudents));
 		
 	}
 	
@@ -59,5 +75,7 @@ public class Instructor extends User {
 	            (createdCourse2 != null ? createdCourse2 : "None"));
 		
 	}
+
+
 	
 }

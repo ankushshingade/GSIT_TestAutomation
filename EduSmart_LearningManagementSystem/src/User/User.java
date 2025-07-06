@@ -11,8 +11,9 @@ abstract public class User {
 	private String name;
 	private String email;
 	private String userID;
-	
 	private static ArrayList<String> courseList = new ArrayList<>();
+	private ArrayList<Course> courseDetails = new ArrayList<>();
+	
 	
 	// Constructors for User
 	User(String name, String email, String userID){
@@ -34,6 +35,8 @@ abstract public class User {
 		
 	}
 
+	// getter and setter
+	
 	public String getName() {
 		return name;
 	}
@@ -57,41 +60,22 @@ abstract public class User {
 	public void setUserID(String userID) {
 		this.userID = userID;
 	}
-
+	
 	public ArrayList<String> getCourseList() {
 		return courseList;
 	}
 
 	public void setCourseList(String courseList) {
 		this.courseList.add(courseList);
-		courseList.
+	}
+	
+	public ArrayList<Course> getCourseDetails() {
+		return courseDetails;
 	}
 
-}
+	public void setCourseDetails(ArrayList<Course> courseList) {
+		this.courseDetails = courseList;
+	}
 
 
-class Course {
-	
-	String title;
-	int durationInHours;
-	final int maxStudents;
-	
-	// Constructors
-	Course(String title, int durationInHours, int maxStudents){
-		this.title = title;
-		this.durationInHours = durationInHours;
-		this.maxStudents = maxStudents;
-	}
-	
-	Course(String title){
-		this.title = title;
-		this.maxStudents = 20;
-	}
-	
-	public void showCourseDetails() {
-		System.out.println("Details for "+title);
-		System.out.println("Duration: "+durationInHours);
-		System.out.println("Maximum students allowed: "+maxStudents);
-		System.out.println("Number of students enrolled for course: ");
-	}
 }

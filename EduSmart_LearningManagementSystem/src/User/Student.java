@@ -1,12 +1,13 @@
 package User;
 
+
 import java.util.ArrayList;
 
 public class Student extends User implements ProgressTrackable{
 
 	private String enrolledCourse1;
 	private String enrolledCourse2;
-	private ArrayList courseListStudents = getCourseList();
+	private ArrayList<String> courseListStudents = getCourseList();
 	
     public Student(String name, String email, String userId) {
         super(name, email, userId);
@@ -50,7 +51,7 @@ public class Student extends User implements ProgressTrackable{
         		System.out.println("Cannot enroll: Maximum courses (2) already enrolled.");
         	}
         	else
-        		System.out.println("Course is not available.");
+        		System.out.println("\""+courseName+ "\" Course is not available.");
             
         }
     }
