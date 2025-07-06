@@ -27,11 +27,25 @@ public class UnderstandingArrayLists {
 		while(lit.hasNext()) {
 			String var = lit.next();
 			System.out.println(var);
-//			System.out.println(lit.next());
+			System.out.println(lit.next());
 		}
 		
 		while(lit.hasPrevious()) {
 			System.out.println(lit.previous());
+			
+//		list.add(1, "Anagha");
+		
+//	ListIterator<String> lit = list.listIterator();
+		//lit = list.listIterator();
+//		while(lit.hasNext()) {
+//			System.out.println(lit.next());
+//		}
+		
+//		while(lit.hasNext()) {
+//			String var = lit.next();
+//			System.out.println(var);
+////			System.out.println(lit.next());
+//		}
 		}
 	}
 
