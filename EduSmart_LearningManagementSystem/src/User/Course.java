@@ -8,13 +8,13 @@ public class Course {
 	private int maxStudents;		// "final" removed
 	
 	// Constructors
-	Course(String title, int durationInHours, int maxStudents){
+	public Course(String title, int durationInHours, int maxStudents){
 		this.title = title;
 		this.durationInHours = durationInHours;
 		this.maxStudents = maxStudents;
 	}
 	
-	Course(String title){
+	public Course(String title){
 		this.title = title;
 		this.maxStudents = 20;
 	}
@@ -46,7 +46,7 @@ public class Course {
 	
 	public void showCourseDetails() {
 		System.out.println("Details for "+title);
-		System.out.println("Duration: "+durationInHours);
+		System.out.println("Duration: "+durationInHours+ " hours");
 		System.out.println("Maximum students allowed: "+maxStudents);
 	}
 }
