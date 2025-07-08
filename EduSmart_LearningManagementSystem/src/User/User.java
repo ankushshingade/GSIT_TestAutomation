@@ -31,7 +31,9 @@ abstract public class User {
 
 	// Welcome message
 	public final void displayWelcome() {
+		System.out.println("------------------------------------------------");
 		System.out.println("Welcome to EduSmart, "+name+ "!");
+		System.out.println("------------------------------------------------");
 		
 	}
 

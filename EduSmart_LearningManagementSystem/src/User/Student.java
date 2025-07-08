@@ -7,6 +7,8 @@ public class Student extends User implements ProgressTrackable{
 
 	private String enrolledCourse1;
 	private String enrolledCourse2;
+	private int trackProgressCourse1;
+	private int trackProgressCourse2;
 	private ArrayList<String> courseListStudents = getCourseList();
 	
     public Student(String name, String email, String userId) {
@@ -33,6 +35,22 @@ public class Student extends User implements ProgressTrackable{
     public void setEnrolledCourse2(String enrolledCourse2) {
         this.enrolledCourse2 = enrolledCourse2;
     }
+    
+	public int getTrackProgressCourse1() {
+		return trackProgressCourse1;
+	}
+
+	public void setTrackProgressCourse1(int trackProgressCourse1) {
+		this.trackProgressCourse1 = trackProgressCourse1;
+	}
+
+	public int getTrackProgressCourse2() {
+		return trackProgressCourse2;
+	}
+
+	public void setTrackProgressCourse2(int trackProgressCourse2) {
+		this.trackProgressCourse2 = trackProgressCourse2;
+	}
 
     // Method to enroll in a course
     public void enrollCourse(String courseName) {
@@ -55,6 +73,13 @@ public class Student extends User implements ProgressTrackable{
             
         }
     }
+	
+	
+//	public void enrollCourse(String courseName) {
+//		if (enrolledCourse1 == null) {
+//			for(Course courses:Course. )
+//		}
+//	}
 
 	
 	@Override
@@ -74,8 +99,12 @@ public class Student extends User implements ProgressTrackable{
 	@Override
 	public void trackProgress() {
 		System.out.println("Tracking progress for student: "+getName());
+		System.out.println("Progress in "+getEnrolledCourse1()+": "+getTrackProgressCourse1()+"%");
+		System.out.println("Progress in "+getEnrolledCourse2()+": "+getTrackProgressCourse2()+"%");
 		
 	}
+
+
 	
 }
 

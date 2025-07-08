@@ -9,7 +9,10 @@ public Admin(String name, String email, String userId) {
 }
 
 public void removeProfile(String name) {
-	System.out.println("\""+name+"\" this profile is removed.");
+	System.out.println("------------------------------------------------");
+	System.out.println("Admin "+getName()+" initiated removal of profile.");
+	System.out.println("\""+name+"\" profile is removed.");
+	System.out.println("------------------------------------------------");
 }
 
 	@Override
