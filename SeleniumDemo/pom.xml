@@ -28,5 +28,20 @@
     <artifactId>selenium-java</artifactId>
     <version>4.34.0</version>
 </dependency>
+
+<!-- WebDriver dependency added to resolve issue with Edge browser -->
+<dependency>
+  <groupId>io.github.bonigarcia</groupId>
+  <artifactId>webdrivermanager</artifactId>
+  <version>5.5.1</version>
+</dependency>
+
+
+<dependency>
+  <groupId>org.slf4j</groupId>
+  <artifactId>slf4j-simple</artifactId>
+  <version>2.0.9</version>
+</dependency>
+
   </dependencies>
 </project>
