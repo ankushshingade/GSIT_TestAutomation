@@ -15,7 +15,6 @@ public class UnderstandingDriver {
 	public static void main(String[] args) throws InterruptedException {
 		
 		System.setProperty("webdriver.edge.driver", "C:\\Users\\Ankush\\Downloads\\edgedriver_win64 (5)\\msedgedriver.exe");
-		//WebDriverManager.edgedriver().driverVersion("139.0.3405.36").setup();
 
 		WebDriver driver = null;
 		Scanner sc = new Scanner(System.in);
