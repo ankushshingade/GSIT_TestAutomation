@@ -39,6 +39,7 @@ public class UnderstandingNavigation {
 		System.out.println(driver.getTitle());
 		Thread.sleep(3000);
 		
+		
 		Thread.sleep(3000);
 		driver.quit();
 	}
