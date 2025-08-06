@@ -1,5 +1,7 @@
 package SeleniumFirst;
 
+import java.util.List;
+
 import org.openqa.selenium.By;
 import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.Keys;
@@ -7,6 +9,9 @@ import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.firefox.FirefoxDriver;
+import org.openqa.selenium.support.ui.Select;
+
+
 
 public class AutomatingForm {
 
@@ -31,9 +36,13 @@ public class AutomatingForm {
 		Thread.sleep(500);
 		driver.findElement(By.xpath("//input[starts-with(@id,'date')]")).click();
 		Thread.sleep(500);
-		driver.findElement(By.xpath("//select[@class='react-datepicker__year-select']")).click();
-		Thread.sleep(500);
-		driver.findElement(By.xpath("//option[@value='1987']")).click();
+		
+		WebElement selYear = driver.findElement(By.xpath("//select[@class='react-datepicker__year-select']"));
+		selYear.click();
+		Thread.sleep(5);
+		Select year = new Select(selYear);
+		year.selectByVisibleText("1987");
+//		driver.findElement(By.xpath("//option[@value='1987']")).click();
 		Thread.sleep(500);
 		driver.findElement(By.xpath("//select[@class='react-datepicker__month-select']")).click();
 		Thread.sleep(500);
@@ -48,28 +57,57 @@ public class AutomatingForm {
 		subjectText.sendKeys("Histo");
 		subjectText.sendKeys(Keys.ENTER);
 		Thread.sleep(1000);
-		//WebElement subjects = driver.findElement(By.xpath("//div[@class='subjects-auto-complete__placeholder css-1wa3eu0-placeholder']"));
-		//executor.executeAsyncScript("arguments[0].sendKeys(subject);", subjects);
-		//executor.executeScript("document.querySelector('//div[@class=\"subjects-auto-complete__placeholder css-1wa3eu0-placeholder\"]').value = arguments[0];", subject);
-		Thread.sleep(500);
 		
-		//WebElement hobbies = driver.findElement(By.xpath("//label[@for='hobbies-checkbox-3']"));
-		//executor.executeScript("argument[1].scrollIntoView(true)", hobbies);
-		//hobbies.click();
 		driver.findElement(By.xpath("//label[text()='Reading']")).click();
 		Thread.sleep(500);
 		 
 		driver.findElement(By.xpath("//textarea[@placeholder='Current Address']")).sendKeys("Test Address. \r 2nd Line");		
-		
 		Thread.sleep(500);
+		
 		driver.findElement(By.id("uploadPicture")).sendKeys("C:\\Users\\Ankush\\Downloads\\Invite2.png");
 		
 		
-		driver.findElement(By.id("react-select-3-input")).sendKeys("Haryana");
-		driver.findElement(By.id("react-select-3-input")).sendKeys(Keys.ENTER);
+//		driver.findElement(By.id("react-select-3-input")).sendKeys("Haryana");
+//		driver.findElement(By.id("react-select-3-input")).sendKeys(Keys.ENTER);
+//		
+//		driver.findElement(By.id("react-select-4-input")).sendKeys("Karnal");
+//		driver.findElement(By.id("react-select-4-input")).sendKeys(Keys.ENTER);
+		Thread.sleep(1000);
+		WebElement stateDropDown =  driver.findElement(By.cssSelector("#state"));
+		stateDropDown.click();
 		
-		driver.findElement(By.id("react-select-4-input")).sendKeys("Karnal");
-		driver.findElement(By.id("react-select-4-input")).sendKeys(Keys.ENTER);
+		List<WebElement> stateElements = driver.findElements(By.cssSelector("div[class=' css-11unzgr'] > div"));
+		for(WebElement ele : stateElements) {
+			String currentDropDownElement = ele.getText();
+			System.out.println(currentDropDownElement);
+			if(currentDropDownElement.equals("Haryana"))
+			{
+				executor.executeScript("arguments[0].scrollIntoView(true)", ele);
+				ele.click();
+				break;
+			}
+		}
+		
+		WebElement cityDropDown =  driver.findElement(By.cssSelector("#city"));
+		cityDropDown.click();
+		
+		List<WebElement> cityElements = driver.findElements(By.xpath("//div[@class=' css-11unzgr']/div"));
+		for(WebElement ele : cityElements) {
+			String currentDropDownElement = ele.getText();
+			System.out.println(currentDropDownElement);
+			if(currentDropDownElement.equals("Panipat"))
+			{
+				executor.executeScript("arguments[0].scrollIntoView(true)", ele);
+				ele.click();
+				break;
+			}
+		}
+		
+		driver.findElement(By.cssSelector("#submit")).click();
+		
+		
+		
+		
 		
 		Thread.sleep(5000);
 		driver.quit();
