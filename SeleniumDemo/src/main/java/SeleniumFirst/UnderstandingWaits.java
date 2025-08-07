@@ -28,6 +28,16 @@ public class UnderstandingWaits {
 		
 		System.out.println(HelloWorldText.getText());
 		
+		driver.navigate().back();
+		
+		driver.findElement(By.xpath("//a[@href='/dynamic_loading/2']")).click();
+		
+		driver.findElement(By.cssSelector("#start > button")).click();
+		
+		WebElement HelloWorldText_2 = wait.until(ExpectedConditions.presenceOfElementLocated(By.cssSelector("div[id='finish'] > h4")));
+		
+		System.out.println(HelloWorldText_2.getText());
+		
 		driver.quit();
 	}
 

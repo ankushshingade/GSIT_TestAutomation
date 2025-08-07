@@ -22,47 +22,47 @@ public class AutomatingForm {
 		//)
 		driver.get("https://demoqa.com/automation-practice-form");
 		driver.findElement(By.xpath("//input[@id='firstName']")).sendKeys("Ankush");
-		Thread.sleep(500);
+		
 		driver.findElement(By.xpath("//input[@id='lastName']")).sendKeys("Shingade");
-		Thread.sleep(500);
+		
 		driver.findElement(By.xpath("//input[@id='userEmail']")).sendKeys("ankush@test.com");
-		Thread.sleep(500);
+		
 		WebElement element = driver.findElement(By.xpath("//label[text()='Male']"));		// .click(); // gender-radio-1
 		JavascriptExecutor executor = (JavascriptExecutor) driver;
 		executor.executeScript("arguments[0].scrollIntoView(true)", element);
 		element.click();
-		Thread.sleep(500);
+		
 		driver.findElement(By.xpath("//input[@placeholder='Mobile Number']")).sendKeys("8765432109");
-		Thread.sleep(500);
+		
 		driver.findElement(By.xpath("//input[starts-with(@id,'date')]")).click();
-		Thread.sleep(500);
+		
 		
 		WebElement selYear = driver.findElement(By.xpath("//select[@class='react-datepicker__year-select']"));
 		selYear.click();
-		Thread.sleep(5);
+		
 		Select year = new Select(selYear);
 		year.selectByVisibleText("1987");
 //		driver.findElement(By.xpath("//option[@value='1987']")).click();
-		Thread.sleep(500);
+		
 		driver.findElement(By.xpath("//select[@class='react-datepicker__month-select']")).click();
-		Thread.sleep(500);
+		
 		driver.findElement(By.xpath("//option[@value='0']")).click();
-		Thread.sleep(500);
+		
 		driver.findElement(By.xpath("//div[text()='11']")).click();
-		Thread.sleep(500);
+		
 		
 		WebElement subjectText = driver.findElement(By.id("subjectsInput")); // driver.findElement(By.cssSelector("//input[@id='subjectsInput']"));
 		subjectText.sendKeys("Computer science");
 		subjectText.sendKeys(Keys.ENTER);
 		subjectText.sendKeys("Histo");
 		subjectText.sendKeys(Keys.ENTER);
-		Thread.sleep(1000);
+		
 		
 		driver.findElement(By.xpath("//label[text()='Reading']")).click();
-		Thread.sleep(500);
+		
 		 
-		driver.findElement(By.xpath("//textarea[@placeholder='Current Address']")).sendKeys("Test Address. \r 2nd Line");		
-		Thread.sleep(500);
+		driver.findElement(By.xpath("//textarea[@placeholder='Current Address']")).sendKeys("Pune");		
+		
 		
 		driver.findElement(By.id("uploadPicture")).sendKeys("C:\\Users\\Ankush\\Downloads\\Invite2.png");
 		
@@ -72,7 +72,7 @@ public class AutomatingForm {
 //		
 //		driver.findElement(By.id("react-select-4-input")).sendKeys("Karnal");
 //		driver.findElement(By.id("react-select-4-input")).sendKeys(Keys.ENTER);
-		Thread.sleep(1000);
+		
 		WebElement stateDropDown =  driver.findElement(By.cssSelector("#state"));
 		stateDropDown.click();
 		
@@ -105,7 +105,7 @@ public class AutomatingForm {
 		
 		driver.findElement(By.cssSelector("#submit")).click();
 		
-		
+		WebElement tableData = driver.findElement(By.cssSelector(null))
 		
 		
 		
