@@ -113,17 +113,31 @@ public class AutomatingForm {
 		WebElement table = driver.findElement(By.xpath("//table"));
 		List<WebElement> tableData = table.findElements(By.tagName("tr"));
 		
-		for(WebElement ele: tableData) {
-			System.out.println(ele.getText());	
-			}
+//		for(WebElement ele: tableData) {
+//			System.out.println(ele.getText());	
+//		}
+	
+		
 		List<String> expectedData = Arrays.asList("Label Values", "Student Name Ankush Shingade", "Student Email ankush@test.com", "Gender Male", "Mobile 8765432109", "Date of Birth 11 January,1987", "Subjects Computer Science, History", "Hobbies Reading", "Picture Invite2.png", "Address Pune", "State and City Haryana Panipat");
 		
+		System.out.println("Expected Data:=============>");
+		
+		for(String item: expectedData) {
+			System.out.println(item);
+		}
+		System.out.println("===========================================");
+		
 		List<String> actualTableData = new ArrayList();
-		for (int i = 0; i < tableData.size(); i++) { 
+		//for (int i = 0; i < tableData.size(); i++) { 
 		    
 		    for (WebElement cell : tableData) {
 		        actualTableData.add(cell.getText().trim());
 		    }
+		//}
+		
+		System.out.println("Actual Data:====================>");
+		for(String item: actualTableData) {
+			System.out.println(item);
 		}
 		
 		if (actualTableData.equals(expectedData)) {
