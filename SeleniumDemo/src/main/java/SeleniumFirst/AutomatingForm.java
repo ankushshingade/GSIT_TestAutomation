@@ -1,5 +1,7 @@
 package SeleniumFirst;
 
+import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.List;
 
 import org.openqa.selenium.By;
@@ -16,6 +18,9 @@ import org.openqa.selenium.support.ui.Select;
 public class AutomatingForm {
 
 	public static void main(String[] args) throws InterruptedException {
+		
+		
+		
 		//WebDriver driver = new FirefoxDriver();
 		WebDriver driver = new ChromeDriver();
 		driver.manage().window().maximize();
@@ -105,12 +110,33 @@ public class AutomatingForm {
 		
 		driver.findElement(By.cssSelector("#submit")).click();
 		
-		WebElement tableData = driver.findElement(By.cssSelector(null))
+		WebElement table = driver.findElement(By.xpath("//table"));
+		List<WebElement> tableData = table.findElements(By.tagName("tr"));
 		
+		for(WebElement ele: tableData) {
+			System.out.println(ele.getText());	
+			}
+		List<String> expectedData = Arrays.asList("Label Values", "Student Name Ankush Shingade", "Student Email ankush@test.com", "Gender Male", "Mobile 8765432109", "Date of Birth 11 January,1987", "Subjects Computer Science, History", "Hobbies Reading", "Picture Invite2.png", "Address Pune", "State and City Haryana Panipat");
 		
+		List<String> actualTableData = new ArrayList();
+		for (int i = 0; i < tableData.size(); i++) { 
+		    
+		    for (WebElement cell : tableData) {
+		        actualTableData.add(cell.getText().trim());
+		    }
+		}
+		
+		if (actualTableData.equals(expectedData)) {
+		    System.out.println("✅ Table data matches expected values.");
+		} else {
+		    System.out.println("❌ Mismatch found!");
+		    System.out.println("Expected: " + expectedData);
+		    System.out.println("Actual: " + actualTableData);
+		}
 		
 		Thread.sleep(5000);
 		driver.quit();
+				
 	}
 
 }
