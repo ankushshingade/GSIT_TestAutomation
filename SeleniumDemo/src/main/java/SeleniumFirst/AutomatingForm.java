@@ -33,8 +33,8 @@ public class AutomatingForm {
 		driver.findElement(By.xpath("//input[@id='userEmail']")).sendKeys("ankush@test.com");
 		
 		WebElement element = driver.findElement(By.xpath("//label[text()='Male']"));		// .click(); // gender-radio-1
-		JavascriptExecutor executor = (JavascriptExecutor) driver;
-		executor.executeScript("arguments[0].scrollIntoView(true)", element);
+		JavascriptExecutor js = (JavascriptExecutor) driver;
+		js.executeScript("arguments[0].scrollIntoView(true)", element);
 		element.click();
 		
 		driver.findElement(By.xpath("//input[@placeholder='Mobile Number']")).sendKeys("8765432109");
@@ -87,7 +87,7 @@ public class AutomatingForm {
 			System.out.println(currentDropDownElement);
 			if(currentDropDownElement.equals("Haryana"))
 			{
-				executor.executeScript("arguments[0].scrollIntoView(true)", ele);
+				js.executeScript("arguments[0].scrollIntoView(true)", ele);
 				ele.click();
 				break;
 			}
@@ -102,7 +102,7 @@ public class AutomatingForm {
 			System.out.println(currentDropDownElement);
 			if(currentDropDownElement.equals("Panipat"))
 			{
-				executor.executeScript("arguments[0].scrollIntoView(true)", ele);
+				js.executeScript("arguments[0].scrollIntoView(true)", ele);
 				ele.click();
 				break;
 			}
