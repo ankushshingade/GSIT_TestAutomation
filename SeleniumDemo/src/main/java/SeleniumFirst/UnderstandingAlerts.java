@@ -1,17 +1,21 @@
 package SeleniumFirst;
 
+import java.time.Duration;
+
 import org.openqa.selenium.Alert;
 import org.openqa.selenium.By;
 import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.chrome.ChromeDriver;
+import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.Wait;
+import org.openqa.selenium.support.ui.WebDriverWait;
 
 public class UnderstandingAlerts {
 
 	public static void main(String[] args) throws InterruptedException {
-		//Wait implicitWait = new 
+		
 		WebDriver driver = new ChromeDriver();
 		driver.manage().window().maximize();
 		
@@ -38,10 +42,11 @@ public class UnderstandingAlerts {
 		System.out.println(alertText);
 		alert.accept();
 		
+		WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(10)); 
 		driver.findElement(By.id("timerAlertButton")).click();
-		Thread.sleep(6000);
+		wait.until(ExpectedConditions.alertIsPresent());	// Implicit wait
 		Alert timerAlert = driver.switchTo().alert();
-		Thread.sleep(2000);
+		//Thread.sleep(2000);
 		System.out.println(timerAlert.getText());
 		timerAlert.accept();
 		
@@ -62,7 +67,13 @@ public class UnderstandingAlerts {
 		promtAlert.sendKeys("Ankush");
 		System.out.println(promtAlert.getText());
 		promtAlert.accept();
-		System.out.println(driver.findElement(By.id("promptResult")).getText());
+		String promptAlert = driver.findElement(By.id("promptResult")).getText();
+		System.out.println(promptAlert);
+		if(promptAlert.contains("Ankush")) {
+			System.out.println("Validaition confirmed.");
+		}
+		else
+			System.out.println("Validation failed.");
 		Thread.sleep(4000);
 		driver.quit();
 
