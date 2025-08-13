@@ -20,22 +20,19 @@ public class UnderstandingFrames {
 		String frameText = ele.getText();
 		System.out.println(frameText);
 		
+		driver.switchTo().defaultContent();
+		
 		try {
-			WebElement frame2 = driver.findElement(By.xpath("(//iframe[@src='/sample'])[2]"));
+			WebElement frame2 = driver.findElement(By.xpath("(//iframe[@src='/sample'])[1]"));
 			driver.switchTo().frame(frame2);
 			System.out.println(driver.findElement(By.cssSelector("h1[id='sampleHeading']")).getText());
 		}catch(Exception e){
-			WebElement frame2 = driver.findElement(By.xpath("(//iframe[@src='/sample'])[2]"));
+			WebElement frame2 = driver.findElement(By.xpath("(//iframe[@src='/sample'])[1]"));
 			js.executeScript("arguments[0].ScrollIntoView(true)", frame2);
-			driver.switchTo().frame(frame2);
-			System.out.println(driver.findElement(By.cssSelector("h1[id='sampleHeading']")).getText());
-			
-		}
-		
-//		WebElement frame2 = driver.findElement(By.cssSelector("iframe[id='frame2']"));
-//		driver.switchTo().frame(frame2);
-//		System.out.println(driver.findElement(By.cssSelector("h1[id='sampleHeading']")).getText());
-		
+			//driver.switchTo().frame(frame2);
+			driver.switchTo().frame("frame2");
+			System.out.println(driver.findElement(By.cssSelector("h1[id='sampleHeading']")).getText());	
+		}	
 		
 		Thread.sleep(5000);
 		driver.quit();
