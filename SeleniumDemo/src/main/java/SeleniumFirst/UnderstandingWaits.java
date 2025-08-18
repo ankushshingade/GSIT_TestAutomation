@@ -14,7 +14,9 @@ public class UnderstandingWaits {
 
 	public static void main(String[] args) {
 		WebDriver driver = new ChromeDriver();
-		//driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(10));
+		//driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(10));	// Global wait
+		
+		// Explicit (Specific) wait
 		WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(10));
 		driver.manage().window().maximize();
 

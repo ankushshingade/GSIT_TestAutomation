@@ -28,7 +28,7 @@ public class UnderstandingFrames {
 			System.out.println(driver.findElement(By.cssSelector("h1[id='sampleHeading']")).getText());
 		}catch(Exception e){
 			WebElement frame2 = driver.findElement(By.xpath("(//iframe[@src='/sample'])[1]"));
-			js.executeScript("arguments[0].ScrollIntoView(true)", frame2);
+			js.executeScript("arguments[0].scrollIntoView(true)", frame2);
 			//driver.switchTo().frame(frame2);
 			driver.switchTo().frame("frame2");
 			System.out.println(driver.findElement(By.cssSelector("h1[id='sampleHeading']")).getText());	
