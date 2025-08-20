@@ -17,9 +17,21 @@ public class ResizeableExample {
 		Actions action = new Actions(driver);
 		JavascriptExecutor js = (JavascriptExecutor) driver;
 		
-		WebElement resize = driver.findElement(By.className("react-resizable-handle"));
-		js.executeScript("arguments[0].scrollIntoView(true)", resize);
-		action.clickAndHold(resize).moveByOffset(200, 100).release().perform();
+		WebElement resizeWithRestiction = driver.findElement(By.xpath("//div[@id='resizableBoxWithRestriction']/span[@class='react-resizable-handle react-resizable-handle-se']"));
+		js.executeScript("arguments[0].scrollIntoView(true)", resizeWithRestiction);
+		action.clickAndHold(resizeWithRestiction)
+		.moveByOffset(200, 100)
+		.release()
+		.perform();
+		
+		Thread.sleep(2000);
+		
+		WebElement resize = driver.findElement(By.xpath("//div[@id='resizable']/span[@class='react-resizable-handle react-resizable-handle-se']"));
+		action.clickAndHold(resize)
+	//	.scrollByAmount(0, 5)
+		.moveByOffset(200, 100)
+		.release()
+		.perform();
 		
 		Thread.sleep(4000);
 		driver.quit();
